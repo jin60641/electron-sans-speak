@@ -1,0 +1,41 @@
+{
+  "name": "mac-sans",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc && cp -r public/* build",
+    "build:app": "yarn build && electron-packager ./ SansSpeak --platform=darwin --arch=x64 --out=dist --icon=public/icon.icns",
+    "watch": "tsc -w",
+    "lint": "eslint -c .eslintrc.js 'src/**/*.ts'",
+    "start": "npm run build && electron ./build/main.js"
+  },
+  "devDependencies": {
+    "@types/node": "12",
+    "@typescript-eslint/eslint-plugin": "^3.6.1",
+    "electron": "8.5.0",
+    "electron-packager": "14.2.1",
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb-typescript": "^9.0.0",
+    "eslint-plugin-import": "^2.22.0",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "iohook": "^0.6.6",
+    "sound-play": "^1.0.5"
+  },
+  "iohook": {
+    "targets": [
+      "electron-76",
+      "node-72"
+    ],
+    "platforms": [
+      "win32",
+      "darwin",
+      "linux"
+    ],
+    "arches": [
+      "x64",
+      "ia32"
+    ]
+  },
+  "main": "build/main.js"
+}

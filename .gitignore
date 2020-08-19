@@ -1,0 +1,11 @@
+node_modules
+dist
+build
+
+*.swp
+.DS_STORE
+
+.yarn
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
